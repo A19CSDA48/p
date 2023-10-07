@@ -1,0 +1,732 @@
+1........................Condition statement.......
+If statement:
+
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+elif statement:
+    a = 33
+    b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+
+for x in range(2, 30, 3):
+  print(x)
+
+i = 1
+while i < 6:
+    print(i)
+    i += 1
+
+
+
+
+2.........................String.........
+str='welcome to page'
+print(str)
+print("lenght:",len(str))
+print("Count:",str.count('o'))
+print("Index:",str.index('e'))
+print("Capitalize:",str.capitalize())
+print("Upper:",str.upper())
+print("Lower:",str.lower())
+print("title",str.title())
+str2="1223"
+print("isalpha:",str2.isalpha())
+print("isalnum:",str2.isalnum())
+print("isdigit:",str2.isdigit())
+str3='1234'
+print("isnum:",str3.isnumeric())
+print("isdigit:",str3.isdigit())
+
+
+
+
+
+
+
+
+
+
+
+
+3...................List............
+my_list=[1,2,'python','java','hi',56,67]
+print(my_list)
+print("Length:",len(my_list))
+print("Index value:",my_list.index('hi'))
+list2=['apple','banana','mango']
+list2.append('orange')
+print("Appending list:",list2)
+num=[1,4,5,9]
+my_list.extend(num)
+print("extend the list:",my_list)
+my_list.remove('python')
+print('remove the value:',my_list)
+my_list.pop(3)
+print('pop the value',my_list)
+my_list.reverse()
+print('reverse the list:',my_list)
+str1=['k','h','f','m']
+str1.sort()
+print('sorting the list:',str1)
+
+
+
+
+
+
+
+4....................Tuple...........
+my_tuple=(5,2,8,2,4,3,2,9,7,1)
+print("Length :",len(my_tuple))
+print("Index",my_tuple.index(7))
+print("Count of 2 in Tuple :",my_tuple.count(2))
+print("Sorted Tuple :",tuple(sorted(my_tuple)))
+print("Minimum Tuple :",min(my_tuple))
+print("Maximum Tuple :",max(my_tuple))
+print("Reversed Tuple :",tuple(reversed(my_tuple)))
+
+5...................Dicitionary..........
+dict1={1:"python",2:"java",3:"Ruby",4:"Ashey"}
+#copy
+dict2=dict1.copy()
+print(dict2)
+#clear
+dict1.clear()
+print(dict1)
+#get
+print(dict2.get(1))
+#keys
+print(dict2.keys())
+#pop
+dict2.pop(4)
+print(dict2)
+#popitem()
+dict2.popitem()
+print(dict2)
+#update
+dict2.update({3:"Martian"})
+print(dict2)
+#values
+print(dict2.values())
+
+
+
+6..........Function.............
+#user defined function
+def square(n):
+   res=n**2
+   return res
+n=int(input("Enter n:"))
+res=square(n)
+print("The square of",n,"is",res)
+#Build in function
+def a():
+   n1=[12,45,23,6,78,34]
+   print(n1)
+   maxi=max(n1)
+   mini=min(n1)
+   print("Maximum:",maxi)
+   print("Minimum:",mini)
+   tot=sum(n1)
+   print("Total:",tot)
+   avg=tot/len(n1)
+   print("Average:",avg)
+a()
+#Recursive Function
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)        
+print("Factorial of 5 is ",factorial(5))
+
+#Lambda Function
+power = lambda x, y: x ** y
+print("Exponential",power(2, 3))
+
+
+............Lambda function..................
+
+
+
+
+
+
+
+
+
+7...................File write and rea.................
+file=open("file.txt","w")
+l=["West Indies\n","Australlia\n","India\n","USA\n"]
+file.writelines(l)
+file.close()
+# append
+file=open("file.txt","a")
+file.write("\n Europe")
+file.close()
+# read
+file=open("file.txt","r")
+print(file.readlines())
+print()
+file.close()
+
+..................................
+
+
+
+8..............count file............
+file=open("file.txt","w")
+l=["West Indies\n","Australlia\n","India\n","USA\n"]
+file.writelines(l)
+file.close()
+file=open("file.txt","r")
+num_of_lines=0
+num_of_word=0
+num_of_char=0
+for line in file:
+    line=line.strip()
+    words=line.split()
+    num_of_lines+=1
+    num_of_word+=len(words)
+    num_of_char+=len(line)
+print("line:",num_of_lines,"words:",num_of_word,"char:",num_of_char)
+
+
+9.............................class and object
+class cal():
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+    def add(self):
+        return self.a + self.b
+    def sub(self):
+        return self.a - self.b
+    def multiply(self):
+        return self.a * self.b
+    def divide(self):
+        return self.a / self.b
+
+a = int(input('Enter First number : '))
+b = int(input('Enter Second number : '))        
+obj=cal(a,b)
+while True:
+        x = ('1. Add \n2. Sub \n3. Multiply \n4. Divide') 
+        print(x)
+        choice = int(input('Please select one of the following : ')) 
+        if choice == 1:
+            print("Result: ",obj.add())
+        elif choice == 2:
+            print("Result: ",obj.sub())
+        elif choice == 3:
+            print("Result: ",obj.multiply())    
+        elif choice == 4:
+            print("Result: ",obj.divide())
+        elif choice == 0:
+            print('Again try one of the following')
+        break
+              
+print()
+
+
+
+
+
+
+
+
+
+
+
+
+10.................database connectivity with My sql................
+
+
+
+import mysql.connector
+
+connection = mysql.connector.connect(
+    host="your_host",
+    user="your_username",
+    password="your_password",
+    database="your_database"
+)
+
+cursor = connection.cursor()
+
+create_table_query = """
+CREATE TABLE IF NOT EXISTS employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    position VARCHAR(255),
+    salary FLOAT
+)
+"""
+cursor.execute(create_table_query)
+
+insert_query = """
+INSERT INTO employees (name, position, salary) VALUES (%s, %s, %s)
+"""
+data_to_insert = [
+    ("John Doe", "Manager", 50000.0),
+    ("Jane Smith", "Engineer", 60000.0)
+]
+cursor.executemany(insert_query, data_to_insert)
+
+connection.commit()
+
+select_query = "SELECT * FROM employees"
+cursor.execute(select_query)
+employees = cursor.fetchall()
+
+print("Employees:")
+for employee in employees:
+    print(employee)
+
+update_query = """
+UPDATE employees SET position = %s, salary = %s WHERE name = %s
+"""
+new_position = "Senior Engineer"
+new_salary = 70000.0
+employee_to_update = "Jane Smith"
+cursor.execute(update_query, (new_position, new_salary, employee_to_update))
+connection.commit()
+
+print("\nAfter Update:")
+cursor.execute(select_query)
+employees = cursor.fetchall()
+for employee in employees:
+    print(employee)
+
+delete_query = "DELETE FROM employees WHERE name = %s"
+employee_to_delete = "John Doe"
+cursor.execute(delete_query, (employee_to_delete,))
+connection.commit()
+
+print("\nAfter Delete:")
+cursor.execute(select_query)
+employees = cursor.fetchall()
+for employee in employees:
+    print(employee)
+
+cursor.close()
+connection.close()
+
+
+
+........................
+
+11.....sqlite....
+
+
+import sqlite3
+
+# Connect to the database (or create it if it doesn't exist)
+conn = sqlite3.connect('student.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Define the student table schema
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS students (
+        student_id INTEGER PRIMARY KEY,
+        first_name TEXT,
+        last_name TEXT,
+        age INTEGER,
+        grade FLOAT
+    )
+''')
+
+while True:
+    print("\nOptions:")
+    print("1. Insert a student record")
+    print("2. Update a student record")
+    print("3. Delete a student record")
+    print("4. View student records")
+    print("5. Exit")
+    
+    choice = input("Enter your choice (1/2/3/4/5): ")
+    
+    if choice == '1':
+        first_name = input("Enter first name: ")
+        last_name = input("Enter last name: ")
+        age = int(input("Enter age: "))
+        grade = float(input("Enter grade: "))
+        
+        cursor.execute(f"INSERT INTO students (first_name, last_name, age, grade) VALUES ('{first_name}', '{last_name}', {age}, {grade})")
+        conn.commit()
+        print("Student record inserted successfully!")
+    
+    elif choice == '2':
+        student_id = int(input("Enter the student ID to update: "))
+        new_age = int(input("Enter new age: "))
+        new_grade = float(input("Enter new grade: "))
+        
+        cursor.execute(f"UPDATE students SET age = {new_age}, grade = {new_grade} WHERE student_id = {student_id}")
+        conn.commit()
+        print("Student record updated successfully!")
+    
+    elif choice == '3':
+        student_id = int(input("Enter the student ID to delete: "))
+        
+        cursor.execute(f"DELETE FROM students WHERE student_id = {student_id}")
+        conn.commit()
+        print("Student record deleted successfully!")
+
+    elif choice == '4':
+        # View student records
+        cursor.execute("SELECT * FROM students")
+        students = cursor.fetchall()
+        if students:
+            print("\nStudent Records:")
+            for student in students:
+                print(student)
+        else:
+            print("No student records found.")
+    
+    elif choice == '5':
+        break
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+
+
+
+12....................Numpyy............
+
+Demonstrate a Python program to implement the basics of NumPy Arrays
+import numpy as np
+
+# Create a NumPy array from a Python list
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
+
+# Print the array and its type
+print("NumPy Array:", my_array)
+print("Array Type:", type(my_array))
+
+# Access elements of the array
+print("Element at index 2:", my_array[2])  # Indexing starts from 0
+
+# Calculate the length of the array
+print("Length of the array:", len(my_array))
+
+# Basic operations on arrays
+print("Sum of elements:", np.sum(my_array))
+print("Mean of elements:", np.mean(my_array))
+print("Maximum element:", np.max(my_array))
+print("Minimum element:", np.min(my_array))
+print("Standard deviation:", np.std(my_array))
+
+# Create a 2D NumPy array
+my_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Access elements of the 2D array
+print("\n2D NumPy Array:")
+print(my_matrix)
+print("Element at row 1, column 2:", my_matrix[1, 2])
+
+# Transpose the 2D array
+transposed_matrix = np.transpose(my_matrix)
+print("\nTransposed Array:")
+print(transposed_matrix)
+
+# Reshape the 2D array
+reshaped_matrix = my_matrix.reshape(3, 3)
+print("\nReshaped Array:")
+print(reshaped_matrix)
+
+# Create an identity matrix
+identity_matrix = np.eye(3)
+print("\nIdentity Matrix:")
+print(identity_matrix)
+
+# Element-wise operations
+array1 = np.array([1, 2, 3])
+array2 = np.array([4, 5, 6])
+element_wise_sum = np.add(array1, array2)
+element_wise_product = np.multiply(array1, array2)
+
+print("\nElement-wise Sum:")
+print(element_wise_sum)
+print("Element-wise Product:")
+print(element_wise_product)
+
+# Matrix multiplication
+matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+matrix_product = np.dot(matrix1, matrix2)
+
+print("\nMatrix Multiplication:")
+print(matrix_product)
+
+...........nama numpy.............
+
+
+
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+print(type(arr))
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print('shape of array :', arr.shape)
+x=np.random.randint(10, size=6)
+#one-dimensional array
+print(x)
+grid = np.arange(1, 10).reshape((3, 3))
+print(grid)
+arr = np.array(['apple', 'banana', 'cherry'])
+print('type of array :', arr.dtype)
+arr = np.array([1, 2, 3, 4])
+print('index:',arr[0])
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr = np.concatenate((arr1, arr2))
+print('joining:',arr)
+arr = np.array([1, 2, 3, 4, 5, 6])
+newarr = np.array_split(arr, 3)
+print('split:',newarr)
+
+
+
+13...............................
+
+Pandas
+Type the following data in note pad and save as sample_data.csv
+
+
+
+Name,Age,City
+Alice,25,New York
+Bob,30,Los Angeles
+Charlie,35,Chicago
+David,28,San Francisco
+Eve,22,Seattle
+
+
+
+
+import pandas as pd
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv('sample_data.csv')
+
+# Display the original DataFrame
+print("Original DataFrame:")
+print(df)
+
+# Selecting specific columns
+selected_columns = df[['Name', 'Age']]
+print("\nSelected Columns:")
+print(selected_columns)
+
+# Filtering rows based on a condition
+filtered_data = df[df['Age'] > 30]
+print("\nFiltered Data (Age > 30):")
+print(filtered_data)
+
+# Sorting by a column
+sorted_data = df.sort_values(by='Age', ascending=False)
+print("\nSorted Data (by Age, descending):")
+print(sorted_data)
+
+# Adding a new column
+df['Gender'] = ['Female', 'Male', 'Male', 'Male', 'Female']
+print("\nDataFrame with New Column (Gender):")
+print(df)
+
+# Grouping and aggregating data
+grouped_data = df.groupby('City')['Age'].mean().reset_index()
+print("\nGrouped and Aggregated Data (Mean Age by City):")
+print(grouped_data)
+
+# Renaming columns
+df = df.rename(columns={'Name': 'Full Name', 'Age': 'Years Old'})
+print("\nDataFrame with Renamed Columns:")
+print(df)
+
+# Deleting a column
+df = df.drop(columns='Gender')
+print("\nDataFrame after Deleting Column (Gender):")
+print(df)
+ 
+14.................................
+
+Demonstrate a Python program to Visualize with Matplotlib - lineplot, scatterplot
+Type the following data in notepad and save as population_data.csv
+Year,Population
+2010,7065
+2011,7142
+2012,7217
+2013,7292
+2014,7000
+2015,7100
+2016,7200
+2017,7572
+2018,7638
+2019,7702
+
+
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Read the data from the CSV file into a DataFrame
+df = pd.read_csv('population_data.csv')
+
+# Extract the Year and Population columns from the DataFrame
+years = df['Year']
+population = df['Population']
+
+# Create a line plot
+plt.figure(figsize=(10, 6))
+plt.plot(years, population, marker='o', linestyle='-', color='b', label='Population (Line Plot)')
+plt.title('Population Over the Years (Line Plot)')
+plt.xlabel('Year')
+plt.ylabel('Population')
+plt.legend()
+plt.grid(True)
+
+# Create a scatter plot
+plt.figure(figsize=(10, 6))
+plt.scatter(years, population, color='r', label='Population (Scatter Plot)', marker='o')
+plt.title('Population Over the Years (Scatter Plot)')
+plt.xlabel('Year')
+plt.ylabel('Population')
+plt.legend()
+plt.grid(True)
+
+# Show both plots
+plt.show()
+
+
+...........................
+
+
+movie ticket,,,,,,,,,,same concept for email,train ticket.........
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+
+
+........database create
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
+
+
+...........insert .........
+
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("John", "Highway 21")
+mycursor.execute(sql, val)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record inserted.")
+
+
+.........select............
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+
+
+...........update...
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
+
+mycursor.execute(sql)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record(s) affected")
+
+
+
+.............delete......
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
+
+mycursor.execute(sql)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record(s) deleted")
